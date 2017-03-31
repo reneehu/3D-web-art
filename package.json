@@ -1,0 +1,33 @@
+{
+  "name": "3d-webart-lab",
+  "version": "1.0.0",
+  "description": "lab",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reneehu/3D-webart-lab.git"
+  },
+  "keywords": [
+    "webGL",
+    "three.js",
+    "ES6"
+  ],
+  "author": "renee hu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reneehu/3D-webart-lab/issues"
+  },
+  "homepage": "https://github.com/reneehu/3D-webart-lab#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.1.2",
+    "jshint": "^2.9.4"
+  }
+}
