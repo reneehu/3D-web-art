@@ -12,13 +12,12 @@ var rename = require('gulp-rename');
 
 gulp.task('webserver', function() {
   return connect.server({
-    liverload: true,
-    root: ['.', '.tmp']
+    liverload: true
   });
 });
 
 gulp.task('livereload', function() {
-  return gulp.src(['.tmp/styles/*.css', '.tmp/scripts/*.js'])
+  return gulp.src(['dist/styles/*.css', 'dist/scripts/*.js'])
     .pipe(watch())
     .pipe(connect.reload());
 });
@@ -30,21 +29,23 @@ gulp.task('lint', function() {
         .pipe(jshint.reporter('default'));
 });
 
+
 // Compile Our Sass
 gulp.task('sass', function() {
-   return  gulp.src('styles/*.sass')
-    .pipe(sass())
-    .pipe(gulp.dest('.tmp/styles'));
+    return gulp.src('styles/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('dist/css'));
 });
+
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
     return gulp.src('scripts/*.js')
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('.tmp/scripts'))
-        .pipe(rename('all.min.js'))
+        .pipe(concat('main.js'))
+        .pipe(gulp.dest('dist'))
+        .pipe(rename('main.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('.tmp/scripts/js'));
+        .pipe(gulp.dest('dist/scripts'));
 });
 
 // Watch Files For Changes
